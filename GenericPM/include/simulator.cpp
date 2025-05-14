@@ -145,7 +145,7 @@ void Simulator::inputPST_FromYaml() {
 
                 disease->setRhFactor(flexibleio->getChar(groupName, "RHFac"));
                 
-                disease->printDisease();
+                // disease->printDisease();
             }
         }
     }
