@@ -1,6 +1,14 @@
 !=======================================================================
-! finterface.f90, Virginia Covert
+! finterface.f90
+! Virginia L. Covert, Willingthon Pavan 
+! 08/13/2026
+!
 ! Fortran interface to C functions for GDM
+!-----------------------------------------------------------------------
+! Licensing
+! Copyright (c) 2026, University of Florida
+! BSD-3-Clause. See the LICENSE file in the root folder for details.
+! SPDX-License-Identifier: BSD-3-Clause
 !-----------------------------------------------------------------------
 ! REVISION HISTORY
 ! 08/18/2025 VC Written with READPESTGDM subroutine to isolate YAML reads

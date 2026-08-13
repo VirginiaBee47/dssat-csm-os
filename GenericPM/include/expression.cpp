@@ -1,3 +1,13 @@
+/**
+ * @file expression.cpp
+ * 
+ * @author Virginia L. Covet (virginiacovert454@gmail.com)
+ * 
+ * @copyright Copyright (c) 2026, University of Florida
+ * @license BSD-3-Clause. See the LICENSE file in the root folder for details.
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 #include <regex>
 #include <algorithm>
 #include <cctype>
