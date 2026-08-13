@@ -2,6 +2,8 @@
  * @file debug_control.h
  * 
  * @author Virginia L. Covet (virginiacovert454@gmail.com)
+ * @author Jose Mauricio Cunha Fernandes (jmauricio.fernandes@icloud.com)
+ * @author Willingthon Pavan (wpavan.us@gmail.com)
  * 
  * Centralized debug control for GenericPM disease simulation.
  * Set GENERICPM_DEBUG_ENABLED to 1 to enable all debug output.

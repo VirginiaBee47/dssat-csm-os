@@ -1,6 +1,6 @@
 !=======================================================================
 ! finterface.f90
-! Virginia L. Covert, Willingthon Pavan 
+! Virginia L. Covert, Willingthon Pavan, Jose Mauricio Cunha Fernandes
 ! 08/13/2026
 !
 ! Fortran interface to C functions for GDM

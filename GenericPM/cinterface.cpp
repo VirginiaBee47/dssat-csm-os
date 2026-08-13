@@ -1,6 +1,7 @@
 /**
  * @file cinterface.cpp
  * 
+ * @author Virginia Covert (virginiacovert454@gmail.com)
  * @author Willingthon Pavan (wpavan.us@gmail.com)
  * @author Jose Mauricio Cunha Fernandes (jmauricio.fernandes@icloud.com)
  * 

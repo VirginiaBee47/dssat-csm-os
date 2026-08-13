@@ -1,6 +1,6 @@
 !=======================================================================
 ! FIOStateManager.f90
-! Virginia Covert, Willingthon Pavan
+! Virginia Covert, Willingthon Pavan, Jose Mauricio Cunha Fernandes
 ! 04/15/2026
 !
 ! Provides persistent state tracking for FIO soil property updates
