@@ -589,6 +589,8 @@ int readPestYaml(char *filePST, int *TRTNUM, int *FOUND) {
 
   std::string trtKey = "TRNO" + std::to_string(*TRTNUM);
 
+  std::string outputHeader = "";
+
   // Try to read the input YAML file and throw an error if it doesn't work.
   // NOTE: How should we address errors in GDM/FlexibleIO?
   try {
@@ -939,6 +941,12 @@ int readPestYaml(char *filePST, int *TRTNUM, int *FOUND) {
 
   manager->setCouplingPointIDs(uniqueCPs);
   // No more diseases found in the YAML file.
+
+  // NOTE: This is where we should generate an output header for PEST.OUT to be appended to the right of the standard DSSAT output.
+  //       The value should go into the following FlexibleIO memory location:
+  //         GROUP:   'PEST'
+  //         VARNAME: 'GDMPESTHEADER'
+  
   return 1;
 } 
 

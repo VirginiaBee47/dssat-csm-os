@@ -77,8 +77,7 @@ public:
         FlexibleIO* fio = FlexibleIO::getInstance();
         if (newOrgan) {
             newOrgan = false;
-            std::cout << "YEARDOY: " << fio->getInteger("CONTROL", "YEARDOY") << " newOrgan = true, size: " << data.size() << std::endl;
-            showData();
+            // showData();
             return data.size();
         }
         return 0;
@@ -113,8 +112,6 @@ public:
     }
 
     float getSenescenceOrganArea(int organ) {
-        //std::cout << "Getting Senescence Organ Area: " << organ << std::endl;
-        //std::cout << "= " << data[organ - 1][1] << std::endl;
         return data[organ - 1].senescenceArea;
     }
 
@@ -131,7 +128,6 @@ public:
     }
 
     void setOrganArea(int organ, float area) {
-        //std::cout << "Setting Organ Area: " << organ << " set to " << area << std::endl;
         if (organ > data.size()) {
             // area Organ Area
             // 0    Senescence Area

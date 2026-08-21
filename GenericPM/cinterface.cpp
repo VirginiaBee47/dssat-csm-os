@@ -60,9 +60,6 @@ extern "C" {
 // couplingInit refers to the seasonal initialization of the GDM
 int couplingInit(int *YRDOY, int *YRPLT) {
     // Get necessary instances for seasinit
-#if GENERICPM_DEBUG_ENABLED
-    std::cerr << "[CINF] couplingInit() called with YRDOY=" << *YRDOY << ", YRPLT=" << *YRPLT << std::endl << std::flush;
-#endif
     Manager *manager = Manager::getInstance();
 
     // Initialize the simulators with relevant data

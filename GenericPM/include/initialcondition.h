@@ -49,7 +49,10 @@ public:
 
     std::shared_ptr<CloudF> getCloud() {
         if (!cloudF) {
-            std::cerr << "Warning: InitialCondition for family " << family << " has no CloudF set." << std::endl;
+            std::vector<std::string> messages;
+            messages.push_back("InitialCondition for family " + family + " has no CloudF set.");
+
+            throwWarning(messages.size(), messages);
             throw std::runtime_error("InitialCondition has no CloudF set.");
         } else {
             return cloudF;

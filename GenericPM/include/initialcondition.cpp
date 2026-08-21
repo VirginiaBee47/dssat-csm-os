@@ -10,6 +10,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "errors.h"
 #include "initialcondition.h"
 #include "debug_control.h"
 
@@ -30,8 +31,12 @@ void InitialCondition::rate() {
     if (!favorabilityAccumulated && cloudF) {
         try {
             dailyFavorability = cloudF->getDisease()->getII_AGE()->evaluate();
-        } catch (const std::runtime_error& e) {
-            std::cerr << "Error evaluating II_AGE expression for DiseaseID: " << cloudF->getDisease()->getDiseaseID() << std::endl << "Exception: " << e.what() << std::endl;
+        } catch (const std::runtime_error e) {
+            std::vector<std::string> messages;
+            messages.push_back("Error evaluating II_AGE expression for DiseaseID: " + cloudF->getDisease()->getDiseaseID());
+            messages.push_back("Exception: " + std::string(e.what()));
+
+            throwWarning(messages.size(), messages);
             dailyFavorability = 0.0f; // Default to 0 favorability if
         }
         

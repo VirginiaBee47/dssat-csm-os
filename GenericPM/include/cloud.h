@@ -14,6 +14,7 @@
 
 #include "basic.h"
 #include "basicinterface.h"
+#include "errors.h"
 #include "disease.h"
 #include "debug_control.h"
 
@@ -123,7 +124,9 @@ public:
 
     void setDisease(std::shared_ptr<Disease> disease) {
         if (disease == nullptr) {
-            std::cout << "Warning: Setting Cloud disease to nullptr." << std::endl;
+            std::vector<std::string> messages;
+            messages.push_back("Setting Cloud disease to nullptr.");
+            throwWarning(messages.size(), messages);
         }
         this->disease = disease;
     }

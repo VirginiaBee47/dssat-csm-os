@@ -125,6 +125,7 @@ set(
         "GenericPM/include/coupling.cpp"
         "GenericPM/include/cropinterface.cpp"
         "GenericPM/include/disease.cpp"
+        "GenericPM/include/errors.cpp"
         "GenericPM/include/equation_context.cpp"
         "GenericPM/include/expression.cpp"
         "GenericPM/include/initialcondition.cpp"

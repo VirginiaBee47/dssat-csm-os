@@ -13,6 +13,7 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
+#include "errors.h"
 #include "../TinyExpr++/tinyexpr.h"
 
 #include <string>
@@ -155,7 +156,10 @@ class Utilities {
                         << " Variable: " << varname << std::endl;
                 logFile.close();
             } else {
-                std::cerr << "Unable to open log file." << std::endl;
+                std::vector<std::string> messages;
+                messages.push_back("Unable to open log file.");
+
+                throwWarning(messages.size(), messages);
             }
         }
 
@@ -167,7 +171,10 @@ class Utilities {
                         << " Variable: " << varname << std::endl;
                 logFile.close();
             } else {
-                std::cerr << "Unable to open log file." << std::endl;
+                std::vector<std::string> messages;
+                messages.push_back("Unable to open log file.");
+
+                throwWarning(messages.size(), messages);
             }
         }
 

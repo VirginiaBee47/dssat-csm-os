@@ -11,6 +11,7 @@
  */
 
 #include "cloud.h"
+#include "errors.h"
 #include "disease.h"
 #include "simulator.h"
 #include "project_config.h"
@@ -25,7 +26,10 @@ static double TE_isFieldCloud(void) {
         if (gEqContext->cloud) {
             return (gEqContext->cloud->getLevel() == CloudLevel::FIELD) ? 1.0 : 0.0;
         } else {
-            std::cerr << "Warning: TE_isFieldCloud called outside of the appropriate context." << std::endl;
+            std::vector<std::string> messages;
+            messages.push_back("TE_isFieldCloud called outside of the appropriate context.");
+            
+            throwWarning(messages.size(), messages);
             return 0.0;
         }
     }
@@ -37,7 +41,10 @@ static double TE_isPlantCloud(void) {
         if (gEqContext->cloud) {
             return (gEqContext->cloud->getLevel() == CloudLevel::PLANT) ? 1.0 : 0.0;
         } else {
-            std::cerr << "Warning: TE_isPlantCloud called outside of the appropriate context." << std::endl;
+            std::vector<std::string> messages;
+            messages.push_back("Warning: TE_isPlantCloud called outside of the appropriate context.");
+
+            throwWarning(messages.size(), messages);
             return 0.0;
         }
     }
@@ -49,7 +56,10 @@ static double TE_isOrganCloud(void) {
         if (gEqContext->cloud) {
             return (gEqContext->cloud->getLevel() == CloudLevel::ORGAN) ? 1.0 : 0.0;
         } else {
-            std::cerr << "Warning: TE_isOrganCloud called outside of the appropriate context." << std::endl;
+            std::vector<std::string> messages;
+            messages.push_back("Warning: TE_isOrganCloud called outside of the appropriate context.");
+
+            throwWarning(messages.size(), messages);
             return 0.0;
         }
     }
@@ -63,7 +73,10 @@ static double TE_getThisCloudValue(void) {
         if (gEqContext->cloud) {
             return static_cast<double>(gEqContext->cloud->getValue());
         } else {
-            std::cerr << "Warning: TE_getThisCloudValue called outside of the appropriate context." << std::endl;
+            std::vector<std::string> messages;
+            messages.push_back("Warning: TE_getThisCloudValue called outside of the appropriate context.");
+
+            throwWarning(messages.size(), messages);
             return 0.0;
         }
     }
@@ -75,7 +88,10 @@ static double TE_getTodayInoculumAdded(void) {
         if (gEqContext->disease) {
             return static_cast<double>(gEqContext->disease->reporter.inoculum_added_today);
         } else {
-            std::cerr << "Warning: TE_getTodayInoculumAdded called outside of the appropriate context." << std::endl;
+            std::vector<std::string> messages;
+            messages.push_back("Warning: TE_getTodayInoculumAdded called outside of the appropriate context.");
+
+            throwWarning(messages.size(), messages);
             return 0.0;
         }
     }
@@ -87,7 +103,10 @@ static double TE_getTodayInoculumRemoved(void) {
         if (gEqContext->disease) {
             return static_cast<double>(gEqContext->disease->reporter.inoculum_removed_today);
         } else {
-            std::cerr << "Warning: TE_getTodayInoculumRemoved called outside of the appropriate context." << std::endl;
+            std::vector<std::string> messages;
+            messages.push_back("Warning: TE_getTodayInoculumRemoved called outside of the appropriate context.");
+
+            throwWarning(messages.size(), messages);
             return 0.0;
         }
     }
