@@ -1044,3 +1044,9 @@ Expression cannot be evaluated.
 
 GDM      23
 An expression depending on a FlexibleIO input found a missing (-99.0) value.
+
+GDM      24
+In unknown internal error has occured. Please check all .yaml inputs for correctness.
+
+GDM      25
+An expression could not be compiled as entered.
