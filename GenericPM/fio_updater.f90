@@ -165,6 +165,20 @@ SUBROUTINE PUT_FIO_SW (SW_arg)
 END SUBROUTINE
 
 SUBROUTINE PUT_FIO_CONTROL (CONTROL_arg)
+    ! CHARACTER (len=1)  MESIC, RNMODE
+    ! CHARACTER (len=2)  CROP
+    ! CHARACTER (len=8)  MODEL, ENAME
+    ! CHARACTER (len=12) FILEX
+    ! CHARACTER (len=30) FILEIO
+    ! CHARACTER (len=102)DSSATP
+    ! CHARACTER (len=120) :: SimControl = 
+    ! &  "                                                            "//
+    ! &  "                                                            "
+    ! INTEGER   DAS, DYNAMIC, FROP, ErrCode, LUNIO, MULTI, N_ELEMS
+    ! INTEGER   NYRS, REPNO, ROTNUM, RUN, TRTNUM
+    ! INTEGER   YRDIF, YRDOY, YRSIM
+    ! INTEGER   FODAT, ENDYRS  !Forecast start date and ensemble #
+    ! INTEGER   CropStatus
     USE ModuleDefs, ONLY: ControlType
     USE flexibleio
 
@@ -180,6 +194,7 @@ SUBROUTINE PUT_FIO_CONTROL (CONTROL_arg)
     CALL fio%set("CONTROL", "YEARDOY", CONTROL_arg % YRDOY)
     CALL fio%set("CONTROL", "DOY", DOY)
     CALL fio%set("CONTROL", "DAS", CONTROL_arg % DAS)
+    CALL fio%set("CONTROL", "TRTNUM", CONTROL_arg % TRTNUM)
 END SUBROUTINE
 
 SUBROUTINE PUT_FIO_CHEM (NCHEM, CDATE, CHAMT, CHDEP, CHMET, CHCOD, CHT)
