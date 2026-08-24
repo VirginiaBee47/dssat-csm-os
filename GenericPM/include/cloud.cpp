@@ -201,7 +201,8 @@ float Cloud::getValue() {
             sum += value;
             // std::cout << "Index: " << i << "\tValue: " << value << std::endl;
         } catch (const std::exception& e) {
-            std::cout << "Exception while checking cloud value for finiteness: " << e.what() << std::endl;
+            // Throw misc. GDM error
+            throwError(24, "", 0);
         }  
     }
     return sum;

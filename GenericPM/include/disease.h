@@ -119,9 +119,7 @@ public:
         // listDiseases.push_back(shared_from_this());
     }
 
-    ~Disease() {
-        std::cout << "Disease destructor called for " << this << " family: " << family << std::endl;
-    }
+    ~Disease() {}
     struct Reporter {
         float inoculum_added_today = 0.0f;
         float inoculum_removed_today = 0.0f;

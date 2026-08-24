@@ -580,6 +580,8 @@ int readPestYaml(char *filePST, int *TRTNUM, int *FOUND) {
   Manager* manager = Manager::newInstance();
   std::string outfileName = std::string(filePST, 8) + '_' + std::to_string(*TRTNUM);
 
+  manager->setFilePST(filePST);
+  manager->setTRTNUM(*TRTNUM);
   manager->setOutfileName(outfileName);
 
   CouplingPointID tempCP;
