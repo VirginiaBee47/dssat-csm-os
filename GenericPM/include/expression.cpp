@@ -313,8 +313,9 @@ float Expression::evaluate() {
         const char *FILE = "";
         const int LINE = 0;
 
-        errorGDM(ERRKEY, &ERRNUM, FILE, &LINE);
         std::string errorMsg = "Evaluation resulted in NaN for expression:\n\tOriginal:   " + originalExpr + "\n\tTranslated: " + this->getTranslated() + "\n\tError Message: '" + ParserCache::getInstance()->getParser(this->getTranslated())->get_last_error_message() + "'";
+        std::cout << errorMsg << std::endl;
+        errorGDM(ERRKEY, &ERRNUM, FILE, &LINE);
         throw std::runtime_error(errorMsg);
     }
     return result;

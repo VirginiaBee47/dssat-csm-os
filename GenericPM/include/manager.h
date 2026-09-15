@@ -85,6 +85,9 @@ class Manager : virtual public BasicInterface {
         static std::vector<std::unique_ptr<CropInterface>> cropInterfaces;
         static std::string outfileName;
 
+        static std::string filePST;
+        static int TRTNUM;
+
         static bool outputStatus;
         
     public:
@@ -172,6 +175,22 @@ class Manager : virtual public BasicInterface {
 
         static std::vector<std::string> getFamilies() {
             return families;
+        }
+  
+        static void setFilePST(std::string filePST) {
+            filePST = filePST;
+        }
+
+        static std::string getFilePST() {
+            return filePST;
+        }
+
+        static void setTRTNUM(int TRTNUM) {
+            TRTNUM = TRTNUM;
+        }
+
+        static int getTRTNUM() {
+            return TRTNUM;
         }
 };
 
