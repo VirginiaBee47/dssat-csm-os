@@ -178,15 +178,11 @@ C-----------------------------------------------------------------------
 C-----------------------------------------------------------------------
 C     Subroutine READPESTGDM reads the .yaml input for the GDM.
 C-----------------------------------------------------------------------
-      call fio%get("PEST","ISDYNAMICDIS",TEMPCHAR1)
-      IF(TEMPCHAR1 .EQ. 'D') THEN
-            ISDYNAMICDIS = 'Y'
-
-!           V.L.C - GDM parameter filename = fileT prefix + ".yaml"
-            FILEGDM = FILET(:8) // '.yaml'
-            CALL READPESTGDM(FILEGDM, TRTNUM, 0)
-      ELSE
-            ISDYNAMICDIS = 'N'
+      call fio%get("PEST", "ISDYNAMICDIS", ISDYNAMICDIS)
+      IF(ISDYNAMICDIS .EQ. 'Y') THEN
+!       V.L.C - GDM parameter filename = fileT prefix + ".yaml"
+        FILEGDM = FILET(:8) // '.yaml'
+        CALL READPESTGDM(FILEGDM, TRTNUM, 0)
       ENDIF
 C***********************************************************************
 C***********************************************************************
@@ -202,7 +198,7 @@ C-----------------------------------------------------------------------
 C     Subroutine IPPROG reads FILET, the pest time series file.
 C-----------------------------------------------------------------------
       ! Generic Disease Purpose - Only one disease system at a time
-      IF (ISDYNAMICDIS .NE. 'Y' .AND. ISWDIS .EQ. 'Y') THEN
+      IF (ISDYNAMICDIS .EQ. 'N' .AND. ISWDIS .EQ. 'Y') THEN
         CALL IPPROG(CONTROL, 
      &    FILET, PATHEX, PID, YRPLT, TRTNUM,              !Input
      &    IDAP, PCN, PNO, POBS, PSTHD, YPL)               !Output
@@ -373,7 +369,7 @@ C-----------------------------------------------------------------------
 !***********************************************************************
       ELSEIF (DYNAMIC .EQ. INTEGR) THEN
 C-----------------------------------------------------------------------
-      IF (PCN .LE. 0 .AND. ISDYNAMICDIS .NE. 'Y') RETURN
+      IF (PCN .LE. 0 .AND. ISDYNAMICDIS .EQ. 'N') RETURN
 C-----------------------------------------------------------------------
 C     Call assimilative damage routine to update assimilative damage
 !          variables.
