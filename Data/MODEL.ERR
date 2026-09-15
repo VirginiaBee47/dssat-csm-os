@@ -1037,7 +1037,7 @@ GDM      14
 Input parameter is missing from file. Please ensure all requied parameters are defined.
 
 GDM      21
-Expression evaluation results in NaN.
+Expression evaluation resulted in NaN.
 
 GDM      22
 Expression cannot be evaluated.
